@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en\ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="numberInput">
+    <p></p>
+    <script>
+        var input = document.getElementById("numberInput");
+        var para = document.querySelector('p');
+
+ 
+        function squared(num) {
+            return num * num;
+        }
+        function cubed(num) {
+            return num * num * num;
+        }
+        function factorial(num) {
+
+            var x = num;
+            while (x > 1) {
+                num = num * (x - 1);
+                x--;
+            }
+            return num;
+        }
+        input.onchange = function () {
+            var num = input.value;
+
+            if (isNaN(num)) {
+                para.textContent = 'Вам нужно ввести номер';
+            }
+            else {
+                alert(para.textContent = num + 'squared is' + squared(num) + '!' + '  ' + 'cubed is ' + cubed(num) + '!' + '  ' + 'factorial is ' + factorial(num) + '.');
+            }
+        }
+    </script>
+</body>
+
+</html>
